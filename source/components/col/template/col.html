@@ -1,0 +1,106 @@
+{#
+  Col - generates an element with column classes
+
+  data: {
+    classes: 'string', // list of classes
+    prefix: 'string', // column prefix, default: 'o-col-'
+    cols: [12,8,6] - array of numbers per breakpoint
+    push: [12,8,6] - array of numbers per breakpoint
+    pull: [12,8,6] - array of numbers per breakpoint
+    pre: [12,8,6] - array of numbers per breakpoint
+    post: [12,8,6] - array of numbers per breakpoint
+  }
+
+  Example:
+  <div class="o-col-12 o-col-8--sm o-col-6--md"/>
+
+  Macro Usage:
+  {% call col({cols: [12,8,6] }) %}
+
+
+  To skip a breakpoint class:
+  {% call col({cols: [12,null,null,6] }) %}
+
+  ---
+
+  Push or pull columns example:
+  {% call col({push: [2,5], pre: [null, null,5,3] }) %}
+
+  Pre or post columns example:
+  {% call col({pre: [2,5], post: [null, null,5,3] }) %}
+
+ #}
+
+{% macro col(data) %}
+  {% set breakpoints = ['xs','sm','md','lg','xlg'] %}
+  {% set prefix = data.prefix or  'o-col-' %}
+  {% set colClasses = '' %}
+  {% set pushClasses = '' %}
+  {% set pullClasses = '' %}
+  {% set preClasses = '' %}
+  {% set postClasses = '' %}
+
+  {# Generate Column Classes #}
+  {% for col in data.cols %}
+    {% if col %}
+      {% if loop.index0 < 1 %}
+      {% set colClasses = colClasses + prefix + col %}
+      {% else %}
+      {% set colClasses = colClasses + ' ' + prefix + col + '--' + breakpoints[loop.index0] %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {# Generate Push/Pull Classes #}
+  {% for push in data.push %}
+    {% if push %}
+      {% if loop.index0 < 1 %}
+      {% set pushClasses = pushClasses + 'u-push-' + push %}
+      {% else %}
+      {% set pushClasses = pushClasses + 'u-push-' + push + '--' + breakpoints[loop.index0] %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  {% for pull in data.pull %}
+    {% if pull %}
+      {% if loop.index0 < 1 %}
+      {% set pullClasses = pullClasses + 'u-pull-' + pull %}
+      {% else %}
+      {% set pullClasses = pullClasses + 'u-pull-' + pull + '--' + breakpoints[loop.index0] %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {# Generate Pre/Post Classes #}
+  {% for pre in data.pre %}
+    {% if pre %}
+      {% if loop.index0 < 1 %}
+      {% set preClasses = preClasses + 'u-pre-' + pre  %}
+      {% else %}
+      {% set preClasses = preClasses + 'u-pre-' + pre + '--' + breakpoints[loop.index0] %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  {% for post in data.post %}
+    {% if post %}
+      {% if loop.index0 < 1 %}
+      {% set postClasses = postClasses + 'u-post-' + post %}
+      {% else %}
+      {% set postClasses = postClasses + 'u-post-' + post + '--' + breakpoints[loop.index0] %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  <{{ data.element or 'div' }} class="{{- colClasses -}}
+      {%- if pushClasses %} {{ pushClasses -}}{% endif %}
+      {%- if pullClasses %} {{ pullClasses -}}{% endif %}
+      {%- if preClasses %} {{ preClasses -}}{% endif %}
+      {%- if postClasses %} {{ postClasses -}}{% endif %}
+      {%- if data.class %} {{ data.class -}}{% endif %}">
+
+    {{ caller() }}
+
+  </{{ data.element or 'div' }}>
+
+{% endmacro %}
+

@@ -1,0 +1,45 @@
+{% set title='SVG Shapes' %}
+
+{% extends './block.html' %}
+
+
+{% block content %}
+
+    <div class="c-styleguide__svg-collection container">
+        <div class="o-grid">
+            {% for svg in project.svgs %}
+            {% if ('brand' in svg) and ('logo' in svg) %}
+            <div class="o-col-12 o-col-6--md" title="{{ svg }}">
+                <div class="c-svg-collection__tile">
+                    <div class="c-svg-collection__container">
+                        {% svg svg %}
+                    </div>
+                    <h4>{{ svg }}</h4>
+                </div>
+            </div>
+            {% endif %}
+            {% if ('icons' in svg) and (not 'full' in svg) %}
+            <div class="o-col-6 o-col-2--md" title="{{ svg }}">
+                <div class="c-svg-collection__tile">
+                    <div class="c-svg-collection__container">
+                        {% svg svg %}
+                    </div>
+                    <h4>{{ svg }}</h4>
+                </div>
+            </div>
+            {% endif %}
+            {% if 'social' in svg %}
+            <div class="o-col-12 o-col-2--md" title="{{ svg }}">
+                <div class="c-svg-collection__tile">
+                    <div class="c-svg-collection__container">
+                        {% svg svg %}
+                    </div>
+                    <h4>{{ svg }}</h4>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+

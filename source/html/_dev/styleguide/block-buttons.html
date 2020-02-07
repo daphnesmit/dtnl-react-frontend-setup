@@ -1,0 +1,40 @@
+{% set title='Buttons' %}
+
+{% extends './block.html' %}
+
+
+{% block content %}
+
+    {% from 'button.html' import button %}
+
+    <h4>Regular</h4>
+    <br>
+
+    {{ button( { label: 'Regular button', url: '#' } ) }} <br><br>
+    {{ button( { label: 'Regular button icon', icon: 'cart', url: '#' } ) }}
+
+    <br><br><br>
+
+
+    <h4>Ghost</h4>
+    <br>
+
+    {{ button( { label: 'Ghost button', variant: 'ghost', url: '#' } ) }} <br><br>
+    {{ button( { label: 'Ghost button icon', variant: 'ghost', icon: 'cart', url: '#' } ) }}
+
+
+    <br><br><br>
+
+    <h4>Link</h4>
+    Color is set with currentColor<br><br>
+    {{ button({ label: 'Regular link', variant: 'link' }) }} <br>
+    {{ button({ label: 'Small link', variant: 'link', size: 'small' }) }} <br><br>
+
+    {{ button({ label: 'Regular link icon', variant: 'link', icon: 'arrow-full' }) }} <br>
+    {{ button({ label: 'Small link icon', variant: 'link', size: 'small', icon: 'arrow-full' }) }}
+
+    <br><br><br>
+
+
+
+{% endblock %}

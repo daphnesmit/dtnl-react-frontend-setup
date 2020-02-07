@@ -1,0 +1,35 @@
+@mixin h1 {
+  line-height: $font-line-height-h1;
+  font-weight: $font-weight-medium;
+  @include fluid-type($font-size-h1, $font-size-h1-mobile);
+}
+
+@mixin h2 {
+  line-height: $font-line-height-h2;
+  font-weight: $font-weight-medium;
+  @include fluid-type($font-size-h2, $font-size-h2-mobile);
+}
+
+@mixin h3 {
+  line-height: $font-line-height-h3;
+  font-weight: $font-weight-medium;
+  @include fluid-type($font-size-h3, $font-size-h3-mobile);
+}
+
+@mixin h4 {
+  line-height: $font-line-height-h4;
+  font-weight: $font-weight-medium;
+  @include fluid-type($font-size-h4, $font-size-h4-mobile);
+}
+
+@mixin h5 {
+  line-height: $font-line-height-h5;
+  font-weight: $font-weight-semibold;
+  @include fluid-type($font-size-h5, $font-size-h5-mobile);
+}
+
+@mixin h6 {
+  line-height: $font-line-height-h6;
+  font-weight: $font-weight-semibold;
+  @include fluid-type($font-size-h6, $font-size-h6-mobile);
+}

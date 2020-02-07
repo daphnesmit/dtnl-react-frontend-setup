@@ -1,0 +1,129 @@
+/*------------------------------------*\
+  #RICH TEXT
+\*------------------------------------*/
+
+// Custom scope for RTE styles.
+.s-rich-text {
+  @extend %p--lg;
+  margin-bottom: 0;
+  color: $color-black;
+
+  p {
+    font-size: inherit;
+    line-height: inherit;
+
+    + h2,
+    + h3 {
+      padding-top: 4.8rem;
+    }
+
+    + h4 {
+      padding-top: 2rem;
+    }
+
+    + ul {
+      padding-top: 1.6rem;
+    }
+  }
+
+  h2 {
+    @include h1;
+    margin-bottom: 4.4rem;
+  }
+
+  h3 {
+    @include h2;
+    margin-bottom: 2.2rem;
+  }
+
+  h4 {
+    @include h3;
+    margin-bottom: 2.2rem;
+  }
+
+  ul,
+  ol {
+    margin-bottom: 4.5rem;
+    margin-left: 2rem;
+    list-style: none;
+  }
+
+  ol {
+    counter-reset: item;
+
+    li {
+      position: relative;
+
+      &::before {
+        content: counter(item);
+        counter-increment: item;
+        position: absolute;
+        left: -3rem;
+      }
+    }
+  }
+
+  ul {
+    li {
+      font-size: inherit;
+      line-height: inherit;
+      padding-left: 2.4rem;
+      position: relative;
+
+      &::before {
+        content: '';
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        background-image: url(/assets/svg/icons/check-white.svg);
+        background-repeat: no-repeat;
+        height: 2.4rem;
+        width: 2.4rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(25%) translatex(-50%);
+        background-color: $color-primary;
+        transition: transform $button-transition-time $button-transition-ease;
+
+        @include screen-tablet-portrait-and-bigger {
+          transform: translateY(50%) translatex(-50%);
+        }
+      }
+    }
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  table {
+    border: 0;
+    font-size: 2rem;
+
+    tr {
+      padding: 0 6rem;
+      border-bottom: 1px solid $color-purplegrey;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 2rem;
+      color: currentColor;
+    }
+
+    tr:nth-child(odd) {
+      background: $color-white-t25;
+    }
+
+    th {
+      font-weight: $font-weight-semibold;
+      border-bottom: 1px solid $color-purplegrey;
+    }
+  }
+}
+
+.rich-text--dark {
+  color: $color-white;
+}

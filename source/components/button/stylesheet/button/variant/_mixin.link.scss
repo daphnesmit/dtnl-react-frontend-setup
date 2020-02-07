@@ -1,0 +1,70 @@
+// Style
+$button-link-border-width: 2px;
+
+// Colors
+$button-link-font-color: currentColor;
+
+// Transitions
+$button-link-transition-time: $button-transition-time;
+$button-link-transition-ease: $button-transition-ease;
+
+@mixin button--link {
+  @include button--base;
+  overflow: hidden;
+  padding: 0.5rem 0 0.8rem;
+  font-size: 2.4rem;
+  position: relative;
+  color: $button-link-font-color;
+  font-weight: $font-weight-semibold;
+  background: transparent;
+  margin: 0 auto 0 0;
+  align-self: flex-start;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: $button-link-border-width;
+    background-color: currentColor;
+    transition: transform $button-link-transition-time $button-link-transition-ease;
+  }
+
+  @include hover-focus {
+    &::after {
+      transform: translate3d(101%, 0, 0);
+    }
+  }
+
+  &.button--small {
+    font-size: 2rem;
+    font-weight: 300;
+    padding-bottom: 0.7rem;
+  }
+
+  &.button--icon {
+    .button__label {
+      margin-right: 0;
+    }
+
+    .button__icon {
+      display: inline-block;
+      width: 18px;
+      margin-left: 2rem;
+      margin-bottom: -0.5rem;
+    }
+  }
+
+  &.button--small {
+    .button__icon {
+      width: 16px;
+      height: 16px;
+      margin-left: 1.5rem;
+    }
+
+    svg {
+      transform: scale(0.8);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{#
+  Container - Generate an element with a container class
+
+  Full grid example:
+
+  {% call container({class: 'c-some-class' }) %}
+    {% call row() %}
+      {% call col({cols: [12,null,8], push:[null,null,4] }) %}
+        col 1
+      {% endcall %}
+      {% call col({cols: [12,null,4], pre:[null,null,8] }) %}
+        col 2
+      {% endcall %}
+    {% endcall %}
+  {% endcall %}
+
+ #}
+{% macro container(data) %}
+  {% set prefix = data.prefix or 'o-container' %}
+
+  <{{ data.element or 'div' }} class="{{- prefix -}}
+      {%- if data.class %} {{ data.class }}{% endif %}">
+
+    {{ caller() }}
+
+  </{{ data.element or 'div' }}>
+
+{% endmacro %}
+

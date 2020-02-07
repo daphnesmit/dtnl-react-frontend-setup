@@ -1,0 +1,6 @@
+.c-styleguide-main {
+  width: 100%;
+  @include screen-tablet-portrait-and-bigger {
+    padding: 0 40px;
+  }
+}

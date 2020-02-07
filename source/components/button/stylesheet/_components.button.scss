@@ -1,0 +1,31 @@
+@import 'button/mixin.button';
+@import 'button/variant/mixin.ghost';
+@import 'button/variant/mixin.link';
+
+.c-button {
+  @include button;
+}
+
+.button--secondary {
+  background-color: $color-primary;
+
+  &::before {
+    background-color: $color-black;
+  }
+}
+
+.button--block {
+  display: block;
+  width: 100%;
+}
+
+/**
+* Button variants
+*/
+.c-button--ghost {
+  @include button--ghost;
+}
+
+.c-button--link {
+  @include button--link;
+}

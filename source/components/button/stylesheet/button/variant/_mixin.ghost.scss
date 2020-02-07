@@ -1,0 +1,27 @@
+// Style
+$button-ghost-border-width: 1px;
+
+$button-ghost-color: $color-grey-90;
+
+@mixin button--ghost {
+  @include button;
+  background: transparent;
+  box-shadow: 0 0 0 $button-ghost-border-width $button-ghost-color inset;
+  color: $button-ghost-color;
+
+  @include hover-focus {
+    background-color: $color-grey-cool-10;
+  }
+
+  &.button--active {
+    background-color: $color-grey-20;
+  }
+
+  .button__icon {
+    color: $button-ghost-color;
+  }
+
+  &::before {
+    display: none;
+  }
+}

@@ -1,0 +1,42 @@
+@mixin p {
+  margin-bottom: 1em;
+  @include fluid-type($font-size-body, $font-size-body-mobile);
+
+  + p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+p {
+  @include p;
+}
+
+%p {
+  @include p;
+}
+
+%p--lg {
+  @include p;
+  @include fluid-type($font-size-body-lg, $font-size-body-lg-mobile);
+  line-height: $font-line-height-body-lg;
+}
+
+%p--sm {
+  @include p;
+  @include fluid-type($font-size-body-sm, $font-size-body-sm-mobile);
+  line-height: $font-line-height-body-sm;
+}
+
+.p {
+  @extend %p;
+}
+
+.p--lg {
+  @extend %p--lg;
+}
+
+.p--sm {
+  @extend %p--sm;
+}

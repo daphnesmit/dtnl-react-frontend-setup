@@ -1,0 +1,12 @@
+{% macro row(data) %}
+  {% set prefix = data.prefix or  'o-grid' %}
+
+  <{{ data.element or 'div' }} class="{{- prefix -}}
+      {%- if data.class %} {{ data.class }}{% endif %}">
+
+    {{ caller() }}
+
+  </{{ data.element or 'div' }}>
+
+{% endmacro %}
+

@@ -1,0 +1,29 @@
+/*----------------------------------*\
+  #GRID
+\*----------------------------------*/
+
+$grid-gutter-desktop: 20px;
+$grid-gutter-mobile: 10px;
+$container-gutter-desktop: 115px;
+$container-gutter-tablet: 60px;
+$container-gutter-mobile: 15px;
+
+$grid-gutter-small-breakpoint: $breakpoint-mobile-plus;
+$grid-breakpoints: (
+  'sm': $breakpoint-mobile-plus,
+  'md': $breakpoint-tablet-portrait,
+  'lg': $breakpoint-tablet-landscape,
+  'xlg': $breakpoint-laptop,
+);
+
+$grid-config: (
+  max-width: $breakpoint-desktop,
+  columns: 12,
+  grid-gutter: $grid-gutter-desktop,
+  grid-gutter-small: $grid-gutter-mobile,
+  container-gutter: $container-gutter-desktop,
+  container-gutter-medium: $container-gutter-tablet,
+  container-gutter-small: $container-gutter-mobile,
+  add-push-pull: true,
+  add-pre-post: true,
+);

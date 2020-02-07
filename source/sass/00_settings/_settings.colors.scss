@@ -1,0 +1,50 @@
+/*----------------------------------*\
+  #COLORS
+\*----------------------------------*/
+
+// Color palette
+
+$color-primary: #1d65ff;
+$color-secondary: #fabb05;
+$color-green: #5cb600;
+$color-orange: #f5a623;
+$color-red: #d0021b;
+
+$color-black: #000000;
+$color-black-t5: rgba(0, 0, 0, 0.05);
+$color-black-t10: rgba(0, 0, 0, 0.1);
+$color-black-t25: rgba(0, 0, 0, 0.25);
+$color-black-t50: rgba(0, 0, 0, 0.5);
+
+$color-white: #ffffff;
+$color-white-t5: rgba(255, 255, 255, 0.05);
+$color-white-t10: rgba(255, 255, 255, 0.1);
+$color-white-t25: rgba(255, 255, 255, 0.25);
+$color-white-t50: rgba(255, 255, 255, 0.5);
+
+$color-grey-cool-50: #919eab;
+$color-grey-cool-20: #e4e8f3;
+$color-grey-cool-10: #ebeef5;
+
+$color-grey-20: #fafcf9;
+$color-grey-40: #ededed;
+$color-grey-50: #a1a1a1;
+$color-grey-60: #979797;
+$color-grey-80: #2b292d;
+$color-grey-90: #1d1d1b;
+$color-purplegrey: #5a585b;
+
+// Core color settings
+
+$color-background-light: $color-grey-cool-20;
+$color-background-dark: $color-black;
+
+$color-background-html: $color-background-dark;
+
+$color-text-header: $color-grey-80;
+$color-text: $color-grey-80;
+
+$color-divider-line: $color-grey-20;
+
+$color-form-placeholder: $color-grey-50;
+$color-form-focus: $color-primary;

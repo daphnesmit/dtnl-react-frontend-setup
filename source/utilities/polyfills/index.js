@@ -1,0 +1,6 @@
+import './DOM/closest'
+import './DOM/remove'
+import './DOM/matches'
+import './custom-event'
+import './proxy-polyfill'
+import './sticky-polyfill'

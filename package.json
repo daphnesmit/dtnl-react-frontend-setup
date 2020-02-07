@@ -1,0 +1,82 @@
+{
+  "name": "frontend-setup",
+  "version": "2.2.1",
+  "license": "MIT",
+  "description": "A basic project setup for creating (static) html templates. Filled with automated tasks and configuration options.",
+  "author": "Dept",
+  "contributors": [
+    {
+      "name": "Adrian Klingen",
+      "email": "adrian.klingen@deptagency.com"
+    },
+    {
+      "name": "Dylan Vens",
+      "email": "dylan.vens@deptagency.com"
+    },
+    {
+      "name": "Kees van Lierop",
+      "email": "kees.vanlierop@deptagency.com"
+    },
+    {
+      "name": "Daphne Smit",
+      "email": "daphne.smit@deptagency.com"
+    }
+  ],
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/tamtam-nl/tamtam-frontend-setup"
+  },
+  "engines": {
+    "node": "10.17.0",
+    "npm": "6.11.3"
+  },
+  "scripts": {
+    "postinstall": "cd node_modules/tamtam-frontend-builder && node utils/npm-install-recursive.js --dirs source/components,source/utilities --ignore node_modules",
+    "bamboo": "cd node_modules/tamtam-frontend-builder && node bin/deploy.js",
+    "deploy": "cd node_modules/tamtam-frontend-builder && node bin/deploy.js",
+    "gulp": "cd node_modules/tamtam-frontend-builder && node bin/start.js",
+    "start": "cd node_modules/tamtam-frontend-builder && node bin/start.js",
+    "build": "cd node_modules/tamtam-frontend-builder && node bin/build.js",
+    "dist": "cd node_modules/tamtam-frontend-builder && node bin/dist.js",
+    "task": "cd node_modules/tamtam-frontend-builder && node bin/task.js",
+    "create": "cd node_modules/tamtam-frontend-builder && node utils/create.js",
+    "lint-fix": "prettier --config .prettierrc --write '{source,__{tests,mocks}__}/**/*.js'"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.8.3",
+    "css-loader": "^3.4.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-vue": "^6.1.2",
+    "node-sass": "^4.13.1",
+    "react-hot-loader": "^4.12.19",
+    "sass-loader": "^8.0.2",
+    "tamtam-frontend-builder": "git+ssh://git@bitbucket.org/tamtam-nl/tamtam-frontend-builder.git#develop",
+    "vue-eslint-parser": "^7.0.0",
+    "vue-loader": "^15.8.3",
+    "vue-style-loader": "^4.1.2",
+    "vue-svg-inline-loader": "^1.4.4",
+    "vue-svg-loader": "^0.15.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "dependencies": {
+    "@ivanv/vue-collapse-transition": "^0.2.1",
+    "@vimeo/player": "^2.10.0",
+    "babel-plugin-idx": "^2.4.0",
+    "body-scroll-lock": "^2.6.4",
+    "bootstrap-vue": "^2.3.0",
+    "idx": "^2.5.6",
+    "js-cookie": "^2.2.1",
+    "nouislider": "^14.1.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "rellax": "^1.10.0",
+    "static-auth": "^1.1.1",
+    "stickyfilljs": "^2.1.0",
+    "swup": "^2.0.8",
+    "v-scroll-lock": "^1.1.0",
+    "vue": "^2.6.11",
+    "vue-select": "^3.4.0",
+    "vuex": "^3.1.2"
+  }
+}

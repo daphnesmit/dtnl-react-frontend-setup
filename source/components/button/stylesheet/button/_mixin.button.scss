@@ -1,0 +1,121 @@
+// sass-lint:disable no-vendor-prefixes, brace-style, no-important
+
+// Colors
+$button-font-color: $color-grey-cool-10;
+$button-background-color: $color-grey-90;
+$button-background-color-hover: darken($button-background-color, 1%);
+
+// Transitions
+$button-transition-time: 300ms;
+$button-transition-ease: $ease-in-out-quad;
+
+@mixin button {
+  @include button--base;
+  margin-right: auto;
+  height: 5.2rem;
+  padding: 1.3rem 5rem;
+  overflow: hidden;
+  font-size: 1.8rem;
+  background-color: $button-background-color;
+  color: $button-font-color;
+  font-weight: $font-weight-semibold;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top: 0;
+    left: 0;
+    background-color: $color-primary;
+    transition: transform $button-transition-time $button-transition-ease;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  .u-button-hover:hover &,
+  &:hover,
+  &:focus {
+    &::before {
+      content: '';
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $color-grey-60;
+
+    &:before {
+      background-color: $color-grey-60;
+    }
+  }
+
+  .button__label {
+    display: block;
+    position: relative;
+  }
+
+  .button__icon {
+    margin-right: 13px;
+    color: $button-font-color;
+  }
+
+  svg {
+    fill: $button-font-color;
+    transition: $button-transition-time $button-transition-ease;
+    transition-property: fill;
+    transform: translateY(0);
+  }
+
+  &.button--icon {
+    padding-left: 6rem;
+    padding-right: 2.3rem;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    @include screen-tablet-portrait-and-bigger {
+      padding: 0 6rem;
+    }
+
+    .button__icon {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+  }
+
+  &.button--icon.button--label-hidden {
+    padding-left: 0;
+    padding-right: 0;
+
+    .button__label {
+      display: none !important;
+    }
+  }
+
+  &.button--icon.button--label-hidden-up {
+    @include generate-mediaquery-rules {
+      .button__label {
+        display: none !important;
+      }
+
+      .button__icon {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &.button--icon.button--label-visible-up {
+    @include generate-mediaquery-rules {
+      .button__label {
+        display: block !important;
+      }
+
+      .button__icon {
+        margin-right: 14px;
+      }
+    }
+  }
+}

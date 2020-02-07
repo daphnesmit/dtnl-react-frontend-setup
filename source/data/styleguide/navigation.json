@@ -1,0 +1,92 @@
+[
+  {
+      "title": "Generics",
+      "items": [
+          {
+              "title": "Fonts",
+              "id": "fonts"
+          },
+          {
+              "title": "Headings",
+              "id": "headings"
+          },
+          {
+              "title": "Svg",
+              "id": "svg"
+          },
+          {
+            "title": "Buttons",
+            "id": "buttons"
+        },
+        {
+            "title": "Text styles",
+            "id": "text"
+        }
+        ]
+  },
+  {
+      "title": "Components",
+      "items": [
+            {
+                "title": "Intro",
+                "id": "intro"
+            },
+            {
+                "title": "uspBar",
+                "id": "usp"
+            },
+            {
+                "title": "Quote",
+                "id": "quote"
+            },
+            {
+                "title": "Pricing",
+                "id": "pricing"
+            },
+            {
+                "title": "Pricing minimal",
+                "id": "pricing-mini"
+            },
+            {
+                "title": "Photo-Text",
+                "id": "photo-text"
+            },
+            {
+                "title": "Features",
+                "id": "features"
+            },
+            {
+                "title": "Media Image",
+                "id": "media-img"
+            },
+            {
+                "title": "Media Video",
+                "id": "media-video"
+            },
+            {
+                "title": "DoublePhoto",
+                "id": "doublephoto"
+            },
+            {
+                "title": "ContactBar",
+                "id": "contact"
+            },
+            {
+                "title": "PhotoAccordion",
+                "id": "photo-accordion"
+            },
+            {
+                "title": "Packages",
+                "id": "packages"
+            },
+            {
+                "title": "Accordion",
+                "id": "accordion"
+            },
+            {
+                "title": "FAQ",
+                "id": "faq"
+            }
+      ]
+  }
+]

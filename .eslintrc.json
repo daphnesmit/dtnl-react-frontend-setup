@@ -1,0 +1,51 @@
+{
+  "parser": "vue-eslint-parser",
+  "plugins": ["simple-import-sort"],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "prettier/vue",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:vue/recommended",
+    "plugin:react/recommended"
+  ],
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "globals": {
+    "google": true,
+    "dataLayer": true
+  },
+"rules": {
+    "quotes": ["error", "single"],
+    "vue/singleline-html-element-content-newline": ["error", {
+      "ignoreWhenNoAttributes": true,
+      "ignores": ["pre", "textarea"]
+    }],
+    "no-console": 0,
+    "semi": 0,
+    "no-prototype-builtins": 0,
+    "import/no-unresolved": "off",
+    "no-extra-semi": "off",
+    "simple-import-sort/sort": "warn",
+    "import/named": "off"
+  }
+}
